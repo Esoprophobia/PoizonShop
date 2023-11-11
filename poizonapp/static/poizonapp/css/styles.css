@@ -1,74 +1,137 @@
-/* Сброс стилей для браузера */
-body, h1, h2, p, ul, li {
+/* Обнуление отступов и полей для всего body */
+body {
     margin: 0;
     padding: 0;
-}
+    background-color: #101010;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 
-body {
+    /* Используем flex-контейнер с направлением колонки, чтобы дочерние элементы были вертикально выровнены */
     display: flex;
     flex-direction: column;
+
+    /* Минимальная высота устанавливается в 100% высоты видимого экрана */
     min-height: 100vh;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
 }
 
+/* Стили для верхнего заголовка */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    /* Задаем черный фон и небольшие внутренние отступы */
+    background-color: black;
+    padding: 10px 0;
 }
 
-nav ul {
+/* Стили для контейнера меню */
+.bar-container {
+    /* Список без маркеров, используем flex для равномерного распределения и выравнивания элементов */
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение между элементами */
+    align-items: center; /* Выравнивание элементов по вертикали */
+    height: 90px; /* Высота верхнего бара */
 }
 
-nav li {
-    display: inline;
-    margin: 0 20px;
+/* Стили для логотипа */
+#logo {
+    /* Отступ слева для логотипа */
+    margin-left: 80px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s;
+/* Стили для изображения логотипа */
+#logo img {
+    /* Устанавливаем максимальную ширину и высоту для логотипа */
+    max-width: 240px;
+    max-height: 90px;
 }
 
-nav a:hover {
-    color: #51dbe1;
+/* Стили для строки поиска */
+.search-bar {
+    /* Используем flex для выравнивания элементов внутри строки поиска */
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Занимает все доступное пространство, чтобы разместиться между логотипом и другими элементами */
 }
 
-main {
-    flex: 1;
-    padding: 40px;
+/* Стили для формы поиска внутри строки поиска */
+.search-bar form {
+    /* Используем flex для выравнивания элементов внутри формы по центру */
+    display: flex;
+    width: 100%; /* Занимает 100% доступной ширины */
+    justify-content: center; /* Размещаем элементы по центру формы */
 }
 
-section {
-    background-color: #fff;
-    padding: 40px;
+/* Стили для поля ввода поиска */
+.search-bar input {
+    padding: 10px;
+    border: 2px solid #ffffff;
+    background-color: #101010;
+    color: #ffffff;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 50%;
+    height: 24px;
+    margin-left: -150px;
+    transition: border-color 0.3s ease;
+    font-family: 'Rubik Wet Paint', sans-serif;
+    font-size: 16px;
 }
 
-section h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
+.search-bar input:focus {
+    color: #ffffff;
 }
 
-section p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #666;
-}
-
+/* Стили для футера */
 footer {
+    /* Задаем черный фон, белый цвет текста и внутренние отступы */
+    background-color: black;
+    color: #42c2b8;
+    padding: 10px;
+
+    /* Прижимаем футер к низу страницы */
+    margin-top: auto;
+
+    /* Выравниваем текст по центру */
     text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+}
+
+footer span.firm-name {
+    font-family: 'Bebas Neue', sans-serif; /* Шрифт для названия фирмы */
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #1a1a1a; /* Бирюзовый цвет (вы можете изменить на свой) */
+    color: #42c2b8;
+    border: 2px solid #ffffff;
+    font-family: 'Rubik Glitch', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+/* Изменение цвета кнопки при наведении */
+.search-bar button:hover {
+    background-color: #ffffff; /* Измените цвет по своему вкусу */
+    color: #000000;
+    border-radius: 5px;
+    border: 2px solid #42c2b8;
+}
+
+/* Стили для ссылки на вход (кнопки) */
+.bar-items a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #42c2b8; /* Цвет фона кнопки */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 80px; /* Отступ от правой границы */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+/* Изменение цвета кнопки при наведении */
+.bar-items a:hover {
+    background-color: #36a190; /* Измените цвет по своему вкусу */
 }
